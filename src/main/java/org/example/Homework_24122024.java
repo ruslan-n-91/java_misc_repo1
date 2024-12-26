@@ -8,6 +8,7 @@ public class Homework_24122024 {
         String string = "I love Java";
         turnString(string);
 
+        //int[] ints = new int[] {45, 13, 22, 0, 91, -14, 0, 77, 54, 11, 7, 2, 3, 2, 0, 11, 18, -99, 54, 22, 81};
         int[] ints = {1, 2, 2, 3, 4, 5, 5, 6, 7, 8, 8, 9};
         getDistinctNumbers(ints);
 
@@ -59,19 +60,18 @@ public class Homework_24122024 {
         //System.out.println(Arrays.toString(result));
 
         //для отсортированного массива
+        //Arrays.sort(ints);
+
         int j = 0;
         int i = 1;
 
         while (i < ints.length)
         {
-            if (ints[i] == ints[j]) {
-                i++;
-            }
-            else {
+            if (ints[i] != ints[j]) {
                 j++;
                 ints[j] = ints[i];
-                i++;
             }
+            i++;
         }
 
         int[] result = Arrays.copyOf(ints, j + 1);
@@ -88,7 +88,7 @@ public class Homework_24122024 {
             if (arr[i] > arr[maxIndex]) {
                 secondToMaxIndex = maxIndex;
                 maxIndex = i;
-            } else if (arr[i] != arr[maxIndex] && arr[i] > arr[secondToMaxIndex]) {
+            } else if (arr[i] > arr[secondToMaxIndex] && arr[i] != arr[maxIndex]) {
                 secondToMaxIndex = i;
             }
         }
@@ -101,10 +101,10 @@ public class Homework_24122024 {
     // "    fly me    to the moon    " - 4
     public static Integer lengthOfLastWord(String string) {
         String newString = string.trim();
-        System.out.println(newString);
+        //System.out.println(newString);
 
         int lastSpaceIndex = newString.lastIndexOf(" ");
-        System.out.println(lastSpaceIndex);
+        //System.out.println(lastSpaceIndex);
 
         return newString.substring(lastSpaceIndex + 1).length();
     }
